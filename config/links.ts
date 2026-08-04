@@ -1,0 +1,2 @@
+export const whatsappUrl =
+"https://wa.me/5491138888358?text=Hola!%0A%0AVi%20la%20web%20de%20Shiften%20y%20me%20gustar%C3%ADa%20conocer%20c%C3%B3mo%20podr%C3%ADan%20ayudar%20a%20automatizar%20mi%20empresa.";
