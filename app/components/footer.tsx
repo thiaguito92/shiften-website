@@ -78,7 +78,7 @@ export default function Footer() {
                 href="mailto:wthiagency@gmail.com"
                 className="group flex w-fit items-center gap-2 text-zinc-300 transition-all duration-300 hover:text-white"
               >
-                wthiagency@gmail.com
+                contacto.shiften@gmail.com
 
                 <ArrowUpRight
                   size={16}
