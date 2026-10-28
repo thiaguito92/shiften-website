@@ -1,16 +1,36 @@
-import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Hanken_Grotesk, Schibsted_Grotesk } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "./components/SmoothScroll";
+import BackgroundController from "./components/BackgroundController";
 
-const spaceGrotesk = Space_Grotesk({
+const schibsted = Schibsted_Grotesk({
   subsets: ["latin"],
-  variable: "--font-space",
+  variable: "--font-schibsted",
+  weight: ["400", "500", "600", "700"],
 });
 
-export const metadata = {
-  title: "Shiften | IA y Automatización",
+const hanken = Hanken_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-hanken",
+  weight: ["400", "500", "600"],
+});
+
+export const metadata: Metadata = {
+  title: "Shiften | Tecnología para que tu empresa no pierda clientes ni tiempo",
   description:
-    "Diseñamos sistemas inteligentes para empresas.",
+    "Sistemas que ordenan tus consultas, automatizan las tareas repetidas y te muestran dónde se te escapan clientes y tiempo. Para fábricas, inmobiliarias, comercios y PyMEs.",
+  openGraph: {
+    title: "Shiften",
+    description:
+      "Tecnología para que tu empresa no pierda clientes ni tiempo.",
+    locale: "es_AR",
+    type: "website",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#f2efe8",
 };
 
 export default function RootLayout({
@@ -21,9 +41,19 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${spaceGrotesk.variable} h-full antialiased`}
+      className={`${schibsted.variable} ${hanken.variable} antialiased`}
+      suppressHydrationWarning
     >
-      <body className={`${spaceGrotesk.className} min-h-full bg-black text-white`}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js')",
+          }}
+        />
+      </head>
+      <body className="min-h-full font-sans text-ink">
+        <SmoothScroll />
+        <BackgroundController />
         {children}
       </body>
     </html>
