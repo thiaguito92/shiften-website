@@ -8,8 +8,8 @@ export default function Contact() {
   return (
     <section id="contacto" data-bg="paper" className="flex flex-col px-4 pt-28 md:min-h-[100svh] md:px-10 md:pt-40">
       <div className="flex-1">
-        <h2 className="font-display text-[19vw] font-semibold leading-[0.88] tracking-[-0.06em] md:text-[14vw]">
-          <SplitLines text="¿Hablamos?" />
+        <h2 className="max-w-[12ch] font-display text-[14vw] font-semibold leading-[0.9] tracking-[-0.055em] md:text-[9vw]">
+          <SplitLines text="Empecemos por una charla." accentPeriod />
         </h2>
 
         <div className="mt-12 grid gap-10 md:mt-16 md:grid-cols-12">
